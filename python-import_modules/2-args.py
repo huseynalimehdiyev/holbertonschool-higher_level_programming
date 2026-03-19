@@ -11,4 +11,4 @@ elif len(args) == 0:
 else:
         print(f"{len(args)} arguments:")
 for i in range(0,len(args)):
-        print(f"{i+1}: {a[i]}")
+        print(f"{i+1}: {args[i]}")
