@@ -2,7 +2,7 @@
 import sys
 if __name__ == "__main__":
     args = sys.argv[1:]
-for int(i) in args:
+for i in args:
     c = 0
-    c+=i
+    c+=int(i)
     print(c)
