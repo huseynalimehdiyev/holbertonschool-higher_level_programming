@@ -8,3 +8,15 @@ if __name__ == "__main__":
     a = sys.agv[1]
     operator = sys.arv[2]
     b = sys.argv[3]
+    if operator == '+':
+        result = add(a, b)
+    elif operator == "-":
+        result = sub(a, b)
+    elif operator == "*":
+        result = mul(a, b)
+    elif operator == "/":
+        result = div(a, b)
+    else:
+        print("Unknown operator. Available operators: +, -, * and /")
+        sys.exit(1)
+    print("{} {} {} = {}".format(a, operator, b, result))
