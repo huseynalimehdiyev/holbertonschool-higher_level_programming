@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def alphabet():
-    c=""
+    c = ""
     for i in range(65, 91):
-        c+=chr(i)
+        c += chr(i)
     return c
