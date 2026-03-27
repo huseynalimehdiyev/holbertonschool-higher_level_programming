@@ -3,7 +3,9 @@ def safe_print_list(my_list=[], x=0):
     try:
         for i in range(x):
             print(my_list[i], end="")
-    except NameError:
-        print("Error for name")
-    else:
-        print("Unknown error")
+    except IndexError:
+        print("Index out of range")
+    except ValueError:
+        print("Value error occur")
+    except TypeError:
+        print("error occur")
