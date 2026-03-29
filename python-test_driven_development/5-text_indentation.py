@@ -7,14 +7,14 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
+    line = ""
     i = 0
     while i < len(text):
-        print(text[i], end="")
+        line += text[i]
         if text[i] in ".:?":
-            print("\n")
-            i += 1
-
-            while i < len(text) and text[i] == " ":
-                i += 1
-            continue
+            print(line.strip())
+            print()
+            line = ""
         i += 1
+    if line.strip():
+        print(line.strip(), end="")
