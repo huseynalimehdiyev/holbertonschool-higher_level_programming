@@ -41,8 +41,7 @@ def lazy_matrix_mul(m_a, m_b):
     if any(len(row) != row_len_b for row in m_b):
         raise TypeError("each row of m_b must be of the same size")
     # Validate multiplication compatibility
-    if row_len_a != len(m_b):
-        raise ValueError("m_a and m_b can't be multiplied")
+    
     
     # Use NumPy to multiply matrices
     result = np.matmul(np.array(m_a), np.array(m_b))
