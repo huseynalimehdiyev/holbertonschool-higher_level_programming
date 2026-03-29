@@ -1,5 +1,4 @@
 >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
-# Valid multiplications
 >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
 [[7, 10], [15, 22]]
 >>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
@@ -9,7 +8,6 @@
 >>> matrix_mul([[1]], [[5]])
 [[5]]
 
-# Invalid types for m_a and m_b
 >>> matrix_mul(5, [[1, 2]])
 Traceback (most recent call last):
 ...
@@ -19,7 +17,6 @@ Traceback (most recent call last):
 ...
 TypeError: m_b must be a list
 
-# Not a list of lists
 >>> matrix_mul([1, 2], [[1, 2]])
 Traceback (most recent call last):
 ...
@@ -29,7 +26,6 @@ Traceback (most recent call last):
 ...
 TypeError: m_b must be a list of lists
 
-# Empty matrices
 >>> matrix_mul([], [[1, 2]])
 Traceback (most recent call last):
 ...
@@ -39,7 +35,6 @@ Traceback (most recent call last):
 ...
 ValueError: m_b can't be empty
 
-# Non-numeric elements
 >>> matrix_mul([[1, "a"]], [[1, 2]])
 Traceback (most recent call last):
 ...
@@ -49,7 +44,6 @@ Traceback (most recent call last):
 ...
 TypeError: m_b should contain only integers or floats
 
-# Rows of different sizes
 >>> matrix_mul([[1, 2], [3]], [[1, 2], [3, 4]])
 Traceback (most recent call last):
 ...
@@ -59,7 +53,6 @@ Traceback (most recent call last):
 ...
 TypeError: each row of m_b must be of the same size
 
-# Non-multipliable matrices
 >>> matrix_mul([[1, 2]], [[1, 2], [3, 4], [5, 6]])
 Traceback (most recent call last):
 ...
