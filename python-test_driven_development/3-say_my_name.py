@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-"""Module that prints name and surname"""
+"""This module provides a function to print a name."""
 
 
 def say_my_name(first_name, last_name=""):
-    "Return My nameis first name and last name"
+    """Prints 'My name is <first_name> <last_name>'.
+
+    first_name and last_name must be strings."""
+    
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
     if not isinstance(last_name, str):
