@@ -3,16 +3,16 @@
 
 
 class Rectangle:
-    """An empty square class."""\
-    
+    """An empty square class."""
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
-    
+
     @property
     def width(self):
         return self.__width
-    
+
     @property
     def height(self):
         return self.__height
