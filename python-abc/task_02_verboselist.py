@@ -4,7 +4,7 @@
 from abc import ABC, abstractmethod
 
 
-class VerboseList:
+class VerboseList(list):
     """Abstract base class VerboseList."""
 
     def append(self, item):
