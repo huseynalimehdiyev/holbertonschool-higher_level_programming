@@ -10,7 +10,7 @@ class CountedIterator:
         self.count = 0
 
     def __next__(self):
-        item = self.__next__(self.iterator)
+        item = next(self.iterator)
         self.count += 1
         return item
 
