@@ -15,7 +15,7 @@ class Square(Rectangle):
         self.__size = size
 
         super().__init__(size, size)
-    
+
     def __str__(self):
         """String representation of Square."""
         print(f"[Square] {self._Rectangle__width}/{self._Rectangle__height}")
