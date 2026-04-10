@@ -62,7 +62,7 @@ age must be an integer
 
 # None
 >>> try:
-...     bg.integer_validator("age")
+...     bg.integer_validator("age", None)
 ... except Exception as e:
 ...     print(e)
 age must be an integer
