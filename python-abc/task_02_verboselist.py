@@ -7,7 +7,6 @@ from abc import ABC, abstractmethod
 class VerboseList:
     """Abstract base class VerboseList."""
 
-    @abstractmethod
     def append(self, item):
         super().append(item)
         print(f"Added [{item}] to the list.")
