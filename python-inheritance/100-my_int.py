@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """MyInt class that inverts == and !="""
 
+
 class MyInt(int):
     """Rebel integer class"""
 
