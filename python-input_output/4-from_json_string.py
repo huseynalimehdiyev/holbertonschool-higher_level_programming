@@ -4,6 +4,6 @@
 import json
 
 
-def from_json_string(my_str)
+def from_json_string(my_str):
     "Write smth"
     return json.loads(my_obj)
