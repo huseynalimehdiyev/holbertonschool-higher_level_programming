@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"JSON"
+"""JSON"""
 
 import json
 
 
 def from_json_string(my_str):
-    "Write smth"
+    """Write smth"""
     return json.loads(my_str)

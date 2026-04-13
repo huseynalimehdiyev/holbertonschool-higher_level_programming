@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"JSON"
+"""JSON"""
 
 import json
 
 
 def to_json_string(my_obj):
-    "Write smth"
+    """Write smth"""
     return json.dumps(my_obj)
