@@ -5,5 +5,5 @@
 def write_file(filename="", text=""):
     "Write smth"
     with open(filename, 'r', encoding='utf-8') as f:
-        f.write(text)
+        return f.write(text)
 
