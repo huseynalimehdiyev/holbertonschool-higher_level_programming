@@ -10,3 +10,4 @@ def pascal_triangle(n):
     else:
         triangle = []
         for i in range(n):
+            row = [1]
