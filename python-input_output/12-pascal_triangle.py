@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Interview question"""
+"""Module that contains function pascal_triangle"""
 
 
 def pascal_triangle(n):
     """Find Pascal triangle"""
-    
+
     if n <= 0:
         return []
     else:
