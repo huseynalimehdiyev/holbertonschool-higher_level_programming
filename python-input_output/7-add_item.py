@@ -16,3 +16,4 @@ else:
 
 # Argumentləri əlavə et
 my_list.extend(sys.argv[1:])
+save_to_json_file(my_list, filename)
