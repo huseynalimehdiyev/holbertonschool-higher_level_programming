@@ -3,6 +3,8 @@
 
 
 def pascal_triangle(n):
+    """Find Pascal triangle"""
+    
     if n <= 0:
         return []
     else:
