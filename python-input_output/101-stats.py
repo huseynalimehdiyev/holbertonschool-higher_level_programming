@@ -27,7 +27,7 @@ def main():
             try:
                 size = int(parts[-1])
                 total_size += size
-            except:
+            except (IndexError):
                 pass
 
             code = parts[-2]
