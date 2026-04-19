@@ -24,14 +24,12 @@ def main():
             if len(parts) < 2:
                 continue
 
-            # Extract file size
             try:
                 size = int(parts[-1])
                 total_size += size
             except:
                 pass
 
-            # Extract status code
             code = parts[-2]
             if code in valid_codes:
                 status_counts[code] = status_counts.get(code, 0) + 1
@@ -45,7 +43,6 @@ def main():
         print_stats(total_size, status_counts)
         raise
 
-    # Final print after EOF
     print_stats(total_size, status_counts)
 
 
