@@ -28,6 +28,7 @@ class CustomObject:
                 obj = pickle.load(f)
                 if isinstance(obj, cls):
                     return obj
+                return None
         except Exception:
             return None
         
