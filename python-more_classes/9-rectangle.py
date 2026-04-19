@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Shebang"""
 
+
 class Rectangle:
     """Defines a rectangle."""
 
