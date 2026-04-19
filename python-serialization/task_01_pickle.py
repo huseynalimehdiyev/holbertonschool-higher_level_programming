@@ -17,7 +17,7 @@ class CustomObject:
     
     def serialize(self, filename):
         try:
-            with open(filename, 'wb', encoding = 'utf-8') as f:
+            with open(filename, 'wb') as f:
                 pickle.dump(self, f)
         
         except Exception:
@@ -26,7 +26,7 @@ class CustomObject:
     @classmethod 
     def deserialize(cls, filename):
         try:
-            with open(filename, 'rb', encoding = 'utf-8') as f:
+            with open(filename, 'rb') as f:
                 obj = pickle.load(f)
                 if isinstance(obj, cls):
                     return obj
