@@ -4,12 +4,9 @@ import json
 
 class SimpleAPIHandler(BaseHTTPRequestHandler):
 
-    # -------------------------
-    # GET REQUEST HANDLER
-    # -------------------------
     def do_GET(self):
 
-        # ROOT ENDPOINT
+        # ROOT
         if self.path == "/":
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
@@ -17,7 +14,7 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self.wfile.write(b"Hello, this is a simple API!")
             return
 
-        # DATA ENDPOINT
+        # DATA (JSON)
         if self.path == "/data":
             data = {
                 "name": "John",
@@ -31,17 +28,17 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(data).encode())
             return
 
-        # STATUS ENDPOINT
+        # -------------------------
+        # FIXED STATUS (IMPORTANT)
+        # -------------------------
         if self.path == "/status":
-            data = {"status": "OK"}
-
             self.send_response(200)
-            self.send_header("Content-type", "application/json")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(json.dumps(data).encode())
+            self.wfile.write(b"OK")
             return
 
-        # INFO ENDPOINT
+        # INFO (JSON)
         if self.path == "/info":
             data = {
                 "version": "1.0",
@@ -55,19 +52,14 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             return
 
         # -------------------------
-        # 404 NOT FOUND
+        # FIXED 404 (IMPORTANT)
         # -------------------------
         self.send_response(404)
-        self.send_header("Content-type", "application/json")
+        self.send_header("Content-type", "text/plain")
         self.end_headers()
-
-        error = {"error": "Endpoint not found"}
-        self.wfile.write(json.dumps(error).encode())
+        self.wfile.write(b"Endpoint not found")
 
 
-# -------------------------
-# START SERVER
-# -------------------------
 def run(server_class=HTTPServer, handler_class=SimpleAPIHandler, port=8000):
     server_address = ("", port)
     httpd = server_class(server_address, handler_class)
