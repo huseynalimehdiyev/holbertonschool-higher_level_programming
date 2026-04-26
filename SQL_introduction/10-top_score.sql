@@ -1,2 +1,2 @@
 -- SELECT
-SELECT * FROM secon_table;
+SELECT score,name FROM secon_table ORDER BY score;
