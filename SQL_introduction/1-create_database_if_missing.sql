@@ -1,3 +1,3 @@
--- 3 first students in the Batch ID=3
 -- hello sql!
-CERATE DATABASE IF NOT EXISTS hbtn_0c_0;
+-- Creates the database hbtn_0c_0 in your MySQL server
+CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
