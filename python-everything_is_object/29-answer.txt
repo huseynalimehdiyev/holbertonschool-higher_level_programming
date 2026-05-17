@@ -1,0 +1,142 @@
+Introduction
+
+In Python, everything is an object. Understanding how Python handles objects in memory is key to writing correct and predictable code. In this post, I will explain how id(), type(), mutable and immutable objects work, and how Python passes arguments to functions.
+
+id and type
+
+Every object in Python has:
+
+a type (what kind of object it is)
+an identity (its memory address in CPython, accessed via id())
+Example:
+x = 10
+
+print(type(x))
+print(id(x))
+Output:
+<class 'int'>
+140245678912304
+type() tells us the object’s class
+id() gives a unique identifier (memory address in CPython)
+Mutable objects
+
+Mutable objects can be changed after creation.
+
+Example: list
+a = [1, 2, 3]
+b = a
+
+a.append(4)
+
+print(a)
+print(b)
+print(id(a), id(b))
+Output:
+[1, 2, 3, 4]
+[1, 2, 3, 4]
+140123456789
+140123456789
+
+Both a and b point to the same object, so changes affect both.
+
+Immutable objects
+
+Immutable objects cannot be changed after creation.
+
+Examples: int, float, tuple, str
+
+Example:
+x = (1, 2)
+y = x
+
+print(x is y)
+Output:
+True
+
+But if we try to modify:
+
+x[0] = 10
+Output:
+TypeError: 'tuple' object does not support item assignment
+Why it matters: mutable vs immutable behavior
+
+Python treats mutable and immutable objects differently in memory.
+
+Example: integers
+a = 89
+b = 89
+
+print(a is b)
+Output:
+True
+
+Python optimizes small integers by reusing objects.
+
+Example: lists
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+print(a is b)
+Output:
+False
+
+Even if values are equal, they are different objects.
+
+How arguments are passed to functions
+
+Python uses call by object reference (also called call by assignment).
+
+Mutable example:
+def modify(lst):
+    lst.append(100)
+
+a = [1, 2, 3]
+modify(a)
+
+print(a)
+Output:
+[1, 2, 3, 100]
+
+The original list is changed.
+
+Immutable example:
+def modify(x):
+    x += 1
+
+a = 10
+modify(a)
+
+print(a)
+Output:
+10
+
+Why?
+
+integers are immutable
+x += 1 creates a new object
+original a is unchanged
+Important behavior: += on lists
+a = [1, 2, 3]
+print(id(a))
+
+a += [4]
+
+print(id(a))
+Output:
+same id before and after
+
+This is because:
+
+list += modifies in place
+
+But for immutable types, it creates a new object.
+
+Conclusion
+
+Understanding:
+
+id() → object identity
+mutable vs immutable objects
+function argument behavior
+
+helps prevent many common Python bugs and explains why objects behave differently in memory.
